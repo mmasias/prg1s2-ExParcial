@@ -5,6 +5,11 @@ public class examen{
         int luz, luzApagada, luzEncendida;
         int hora;
 
+        hora=0;
+
+        while(hora<=72){
+            hora=hora+1;
+
         ventana=(Math.random()*100-0)+0;
         if(ventana<=70){
             ventana=ventanaAbierta;
@@ -22,9 +27,15 @@ public class examen{
         (i==j=ventana);
         for(int i=1; i<=5;i=i+1){
             for(int j=1;j<=7;j=j+1)
-            if()
+        }
+        if(ventana=ventanaAbierta && luz=luzEncendida){
+            System.out.print("[0]");
+        }else if(ventana=ventanaCerrada){
+            System.out.print("[#]");
+        }else if(ventana=ventanaAbierta && luz=luzApagada){
+            System.out.print("[.]");
         }
 
-        int hora=hora+1;
+        }
     }
 }
