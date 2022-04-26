@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class examen{
     public static void main(String[] args){
 
@@ -23,20 +25,26 @@ public class examen{
         }else{
             luz=luzApagada;
         }
+    
 
-        for(int i=0;i<=6;i++){
+        for(int i=1;i<=5;i++){
+            for(int j=1;j<=7;j++1){
 
-        if((ventanaAbierta && luzEncendida)==i){
-            System.out.print("[0]");
+
+            if((ventanaAbierta && luzEncendida)==i){
+            System.out.println("[0]");
         }else if((ventanaCerrada)==i){
-            System.out.print("[#]");
+            System.out.println("[#]");
         }else if((ventanaAbierta && luzApagada)==i){
-            System.out.print("[.]");
+            System.out.println("[.]");
         }
+
+        } 
     
         }
 
    
-        }
+        
     }
+
 }
