@@ -13,20 +13,31 @@ public class Codigoex{
             int pisos = 1 ;
             while (horas < 25){
                 System.out.println("Hora : " + horas );
-                for ( int pisos = 1 ; pisos < altura ; pisos = pisos + 1){
+                if (pr <= 0.25){
+                    averiaR = (int)(Math.random() * 5 + 1);
+                }
+                if (pap <= 0.25){
+                    averiaP = (int)(Math.random() * 7 + 1);
+                }
+                for (; pisos < altura ; pisos = pisos + 1){
                     System.out.print( 8 - columnas);
-                    if (pr <= 0.25){
-                        
-                    }
-                    for (columnas <= 5 ; columnas = columnas + 1 ){
-                        double pva = Math.random();
-                        double ple = Math.random();
-                        if (pva <= 0.30){
-                            System.out.print("[#]");
-                        } else if ( pva > 0.30 && ple <= 0.40){
-                            System.out.print("[.]");
-                        } else if (pva > 0.30 && ple > 0.40){
-                            System.out.print("[0]");
+                    if (averiaP == pisos){
+                        for (;columnas <= 5 ; columnas = columnas + 1 ){
+                            System.out.print("[P]");
+                        }
+                    } else {
+                        for (;columnas <= 5 ; columnas = columnas + 1 ){
+                            double pva = Math.random();
+                            double ple = Math.random();
+                            if (averiaR == columnas){
+                                System.out.print("[R]");
+                            } else if(pva <= 0.30){
+                                System.out.print("[#]");
+                            } else if ( pva > 0.30 && ple <= 0.40){
+                                System.out.print("[.]");
+                            } else if (pva > 0.30 && ple > 0.40){
+                                System.out.print("[0]");
+                            }
                         }
                     }
                     System.out.println();
