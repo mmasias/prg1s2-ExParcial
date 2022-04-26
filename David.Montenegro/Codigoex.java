@@ -11,10 +11,10 @@ public class Codigoex{
             int columnas = 1 ;
             int pisos = 1 ;
             if (pr <= 0.25){
-                averiaR = (int)(Math.random() * 5 + 1);
+                averiaR = (int)(Math.random() * 4 + 1);
             }
-            if (pap <= 0.25){
-                averiaP = (int)(Math.random() * 7 + 1);
+            if (pap <= 0.15){
+                averiaP = (int)(Math.random() * 6 + 1);
             }
             while (horas < 25){
                 System.out.println("Hora : " + horas );
