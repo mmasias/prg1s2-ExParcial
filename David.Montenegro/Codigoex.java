@@ -1,6 +1,6 @@
 public class Codigoex{
     public static void main (String[] args){
-        int altura = 8;
+ 
         int dia = 1;
         int horas = 1;
         while ( dia < 4 ){
@@ -19,7 +19,7 @@ public class Codigoex{
                 if (pap <= 0.25){
                     averiaP = (int)(Math.random() * 7 + 1);
                 }
-                for (; pisos < altura ; pisos = pisos + 1){
+                while (pisos < 8){
                     System.out.print( 8 - columnas);
                     if (averiaP == pisos){
                         for (;columnas <= 5 ; columnas = columnas + 1 ){
@@ -40,13 +40,16 @@ public class Codigoex{
                             }
                         }
                     }
+                    pisos = pisos + 1;
                     System.out.println();
                 }
+                pisos = 1;
+                columnas = 1;
                 horas = horas + 1 ;
                 System.out.println("---------------------------");
             }
             dia = dia + 1;
-            horas = 1 ;
+            horas = 1;
         }
     }
 }
