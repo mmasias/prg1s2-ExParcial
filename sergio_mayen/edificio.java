@@ -35,7 +35,7 @@ public class edificio{
             }
 
             averia = Math.random();
-            if(rayo <=0.15){
+            if(averia <=0.15){
                 System.out.println("Se rompio fila :(" + averia);
             }else{
                 System.out.println("No paso nada :)" + averia);
