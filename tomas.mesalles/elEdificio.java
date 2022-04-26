@@ -1,4 +1,4 @@
-public class pyEdificio {
+public class elEdificio {
     public static void main(String[] args) {
 
         double rayo_columna = 0;
@@ -13,7 +13,7 @@ public class pyEdificio {
                 nueva_averia_posible = true;
                 rayo_columna = 0;
                 averia_planta = 0;
-                System.out.println("Es un dia nuevo!");
+                System.out.println("Es un nuevo dia!");
 
             }
             System.out.println("Dia [" + (dia + 1) + "]");
@@ -33,7 +33,7 @@ public class pyEdificio {
                 System.out.println("<Ha habido una averia en la planta [" + averia_planta +"]>");
             }
 
-            for (int y_espacio = 1; y_espacio <=7; y_espacio = y_espacio + 1){
+            for (int y_espacio = 7; y_espacio >=1; y_espacio = y_espacio - 1){
                 System.out.print(y_espacio);
 
                 for (int x_espacio = 1; x_espacio <=5; x_espacio = x_espacio + 1){
