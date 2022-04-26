@@ -1,8 +1,8 @@
 public class examen{
     public static void main(String[] args){
 
-        int ventana, ventanaCerrada, ventanaAbierta;
-        int luz, luzApagada, luzEncendida;
+        double ventana, ventanaCerrada, ventanaAbierta;
+        double luz, luzApagada, luzEncendida;
         int hora;
 
         hora=0;
@@ -10,14 +10,14 @@ public class examen{
         while(hora<=72){
             hora=hora+1;
 
-        ventana=(Math.random()*100-0)+0;
+        ventana=(Math.random()*(100-0))+0;
         if(ventana<=70){
             ventana=ventanaAbierta;
         }else{
             ventana=ventanaCerrada;
         }
 
-        luz=(Math.random()*100-0)+0;
+        luz=(Math.random()*(100-0))+0;
         if(luz<=60){
             luz=luzEncendida;
         }else{
@@ -26,11 +26,11 @@ public class examen{
 
         for(int i=0;i<=6;i++){
 
-        if((ventana=ventanaAbierta && luz=luzEncendida)==i){
+        if((ventanaAbierta && luzEncendida)==i){
             System.out.print("[0]");
-        }else if((entana=ventanaCerrada)==i){
+        }else if((ventanaCerrada)==i){
             System.out.print("[#]");
-        }else if((ventana=ventanaAbierta && luz=luzApagada)==i){
+        }else if((ventanaAbierta && luzApagada)==i){
             System.out.print("[.]");
         }
     
