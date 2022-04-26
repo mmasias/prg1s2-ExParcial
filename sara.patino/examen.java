@@ -3,40 +3,37 @@ import java.lang.Math;
 class examen{
     public static void main(String[] args) {
 
-        int dia, hora;
-        double  probabilidadVentana, probabilidadLuz, probabilidadAveria, probabilidadRayo;
+        int dia, hora, ubicacionAveria;
+        double  probabilidadVentana, probabilidadLuz, probabilidadAveria;
         boolean ventanaAbierta, luzEncendida;
 
         dia = 1;
         while(dia <= 3 ) {
 
-         
 
-            // for (int y = 1; y<=7; y++){ 
-            //     probabilidadAveria = Math.random();
+            // //Averia
+            // probabilidadAveria = (Math.random()*(100-0))+0;
 
-            //     if(probabilidadAveria >= 0.85 && pisoEstropeado == 0){
-            //         pisoEstropeado = y;
-            //     }
+            // if(probabilidadAveria<=15){
+            //     ubicacionAveria=(int)(Math.random()*7+1);
+
             // }
 
-            // for (int x = 1; x<=5; x++){ 
-            //     probabilidadRayo = Math.random();
+            // //CaidaRayo
+            // int columnaRayo;
 
-            //     if(probabilidadRayo >= 0.75 && columnaEstropeada == 0){
-            //         columnaEstropeada = x;
-            //     }
-            // }
+            // columnaRayo= (Math.random()*(100-0))+0;
+
 
             for(hora = 1; hora <= 24; hora++){
                 System.out.println("Hora " + hora + " del dia " + dia);
                 for(int i = 7; i>0; i--){
                     System.out.print(i);
                     for(int j = 1; j<=5; j++){
-                        probabilidadVentana = Math.random();
-                        probabilidadLuz = Math.random();
-                        ventanaAbierta = probabilidadVentana > 0.7 ? false: true;
-                        luzEncendida = probabilidadLuz > 0.6 ? false: true;
+                        probabilidadVentana = (Math.random()*(100-0))+0;
+                        probabilidadLuz = (Math.random()*(100-0))+0;
+                        ventanaAbierta = probabilidadVentana > 70 ? false: true;
+                        luzEncendida = probabilidadLuz > 60 ? false: true;
                         
                         if(ventanaAbierta){
                             if(luzEncendida){
