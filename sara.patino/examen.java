@@ -31,7 +31,8 @@ public class examen{
             luzEncendida=[0]
         }else{
             luz=luzApagada;
-            luzApagada=[.]
+            luzApagada=[.];
+            dtydty
         }
     
 
