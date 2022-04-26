@@ -4,9 +4,8 @@ public class edificio{
     public static void main(String[] args){
         for (int dia = 1; dia <=3; dia = dia+1){
             System.out.println("El dia es: " + dia);
-
+            float rayo = (float) Math.random();
             for (int hora = 1; hora <=24; hora = hora+1){
-                float rayo = (float) Math.random();
                 float ventana = (float) Math.random();
                 float luz = (float) Math.random();
                 int fila = (int) (Math.random() * (7 - 1) + 1);
