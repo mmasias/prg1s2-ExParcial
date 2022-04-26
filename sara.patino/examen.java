@@ -1,62 +1,61 @@
 import java.lang.Math;
 
-public class examen{
-    public static void main(String[] args){
+class examen{
+    public static void main(String[] args) {
 
-        double ventana, ventanaCerrada, ventanaAbierta;
-        double luz, luzApagada, luzEncendida;
-        int hora;
+        int dia, hora;
+        double  probabilidadVentana, probabilidadLuz, probabilidadAveria, probabilidadRayo;
+        boolean ventanaAbierta, luzEncendida;
 
-        ventana=[];
-        ventanaCerrada=[*];
-        
+        dia = 1;
+        while(dia <= 3 ) {
 
-        hora=0;
+         
 
-        while(hora<=72){
-            hora=hora+1;
+            // for (int y = 1; y<=7; y++){ 
+            //     probabilidadAveria = Math.random();
 
-        ventana=(Math.random()*(100-0))+0;
-        if(ventana<=70){
-            ventana=ventanaAbierta;
-            ventanaAbierta=[0];
-        }else{
-            ventana=ventanaCerrada;
-            ventanaCerrada=[#];
-        }
+            //     if(probabilidadAveria >= 0.85 && pisoEstropeado == 0){
+            //         pisoEstropeado = y;
+            //     }
+            // }
 
-        luz=(Math.random()*(100-0))+0;
-        if(luz<=60){
-            luz=luzEncendida;
-            luzEncendida=[0]
-        }else{
-            luz=luzApagada;
-            luzApagada=[.];
-            dtydty
-        }
+            // for (int x = 1; x<=5; x++){ 
+            //     probabilidadRayo = Math.random();
+
+            //     if(probabilidadRayo >= 0.75 && columnaEstropeada == 0){
+            //         columnaEstropeada = x;
+            //     }
+            // }
+
+            for(hora = 1; hora <= 24; hora++){
+                System.out.println("Hora " + hora + " del dia " + dia);
+                for(int i = 7; i>0; i--){
+                    System.out.print(i);
+                    for(int j = 1; j<=5; j++){
+                        probabilidadVentana = Math.random();
+                        probabilidadLuz = Math.random();
+                        ventanaAbierta = probabilidadVentana > 0.7 ? false: true;
+                        luzEncendida = probabilidadLuz > 0.6 ? false: true;
+                        
+                        if(ventanaAbierta){
+                            if(luzEncendida){
+                                System.out.print(" [O] ");
+                            }
+                            else{
+                                System.out.print(" [.] ");
+                            }
+                        }
+                        else{
+                            System.out.print(" [#] ");
+                        }
+                    }
+                    System.out.println(); 
+                }
     
-
-        for(int i=1;i<=5;i++){
-            for(int j=1;j<=7;j++){
-
-
-            if(ventanaAbierta==i && ventanaAbierta==j && luzEncendida==i && luzEncendida==j ){
-            System.out.println("[0]");
-        }else if(ventanaCerrada==i && ventanaCerrada==j){
-            System.out.println("[#]");
-        }else if(ventanaAbierta==i &&ventanaAbierta==j && luzApagada==i && luzApagada==j){
-            System.out.println("[.]");
+            }
+            dia++;
         }
-
-        
-    
-        }
-    }
-
-    }
-
-   
         
     }
-
 }
