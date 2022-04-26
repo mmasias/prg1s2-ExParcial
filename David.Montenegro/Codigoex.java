@@ -11,6 +11,7 @@ public class Codigoex{
             int averiaP = 0 ;
             int columnas = 1 ;
             int pisos = 1 ;
+            
             while (horas < 25){
                 System.out.println("Hora : " + horas );
                 if (pr <= 0.25){
@@ -20,13 +21,13 @@ public class Codigoex{
                     averiaP = (int)(Math.random() * 7 + 1);
                 }
                 while (pisos < 8){
-                    System.out.print( 8 - columnas);
+                    System.out.print( 8 - pisos);
                     if (averiaP == pisos){
                         for (;columnas <= 5 ; columnas = columnas + 1 ){
                             System.out.print("[P]");
                         }
                     } else {
-                        for (;columnas <= 5 ; columnas = columnas + 1 ){
+                        while(columnas < 6){
                             double pva = Math.random();
                             double ple = Math.random();
                             if (averiaR == columnas){
@@ -38,13 +39,14 @@ public class Codigoex{
                             } else if (pva > 0.30 && ple > 0.40){
                                 System.out.print("[0]");
                             }
+                            columnas = columnas + 1 ;
                         }
                     }
+                    columnas = 1;
                     pisos = pisos + 1;
                     System.out.println();
                 }
                 pisos = 1;
-                columnas = 1;
                 horas = horas + 1 ;
                 System.out.println("---------------------------");
             }
