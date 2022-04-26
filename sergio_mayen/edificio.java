@@ -7,7 +7,7 @@ public class edificio{
         Scanner siguiente = new Scanner(System.in);
 
         int dia = 0, hora = 0;
-        double ventanaAbiertaCerrada, ventanaEncendidaApagada, averiaNumero, rayoNumero;
+        double ventanaAbiertaCerrada, ventanaEncendidaApagada;
 
         while(dia < 3){
             dia = dia + 1;
@@ -46,16 +46,16 @@ public class edificio{
                 System.out.println("Ventana encendida " +ventanaEncendidaApagada);
             }
 
-            for(int h = 0; h < 24; h++){
-                System.out.println("Hora " + h + " del dia " + dia);
+            for(hora = 0; hora <= 24; hora++){
+                System.out.println("Hora " + hora + " del dia " + dia);
                 for(int i = 7; i>0; i--){
                     System.out.print(i);
                     for(int j = 1; j<=5; j++){
                         if(i == plantaEstropeada || j == columnaEstropeada){
                             System.out.print(" [x] ");
                         }
-                        else if(ventanaAbiertaCerrada){
-                            if(ventanaEncendidaApagada){
+                        else if(ventanaAbiertaCerrada > 0.7){
+                            if(ventanaEncendidaApagada > 0.6){
                                 System.out.print(" [O] ");
                             }
                             else{
