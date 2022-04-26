@@ -20,7 +20,7 @@ public class edificio{
 
                             if(ventana <= 0.7 && columna <= i){
                                 
-                                if (rayo <= 0.25 && columna == j ){
+                                if (rayo <= 0.25 && columna == j){
                                     System.out.print(" [T] "); // estropeada
                                 } else if(luz <= 0.6 && fila >= j){
                                     System.out.print(" [o] "); // con luz
@@ -30,14 +30,12 @@ public class edificio{
                             } else {
                                 System.out.print(" [#] "); // cerrada
                             }
+                    }
+                    System.out.println();
                 }
                 System.out.println();
             }
-            System.out.println();
+            System.out.println("Fin del dia " + dia);
         }
-        
-        
-        System.out.println("Fin del dia " + dia);
     }
-}
 }
