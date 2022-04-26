@@ -24,18 +24,19 @@ public class examen{
             luz=luzApagada;
         }
 
-        (i==j=ventana);
-        for(int i=1; i<=5;i=i+1){
-            for(int j=1;j<=7;j=j+1)
-        }
-        if(ventana=ventanaAbierta && luz=luzEncendida){
+        for(int i=0;i<=6;i++){
+
+        if((ventana=ventanaAbierta && luz=luzEncendida)==i){
             System.out.print("[0]");
-        }else if(ventana=ventanaCerrada){
+        }else if((entana=ventanaCerrada)==i){
             System.out.print("[#]");
-        }else if(ventana=ventanaAbierta && luz=luzApagada){
+        }else if((ventana=ventanaAbierta && luz=luzApagada)==i){
             System.out.print("[.]");
         }
+    
+        }
 
+   
         }
     }
 }
