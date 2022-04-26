@@ -9,7 +9,7 @@ public class edificio{
         double ventanaAbiertaCerrada, ventanaEncendidaApagada, averia, rayo;
         int dia = 0;
 
-        while(dia > 5){
+        while(dia > 5);{
             dia = dia + 1;
 
             ventanaAbiertaCerrada = Math.random();
