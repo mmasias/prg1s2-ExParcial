@@ -1,3 +1,11 @@
+// for(dias)
+//     for(Horas)
+//         for(plantas)
+//             for(pisos)
+//                 aqui probabilidad abuerto/cerrado
+//                 Si esta abierto
+//                     Aqui probabilidad encendido/apagado
+                    
 import java.lang.Math;
 public class ExamenEdificio {
     public static void main(String[] args){
@@ -8,13 +16,13 @@ public class ExamenEdificio {
         double ProbRayo, ProbPisoAveriado;
 
         Dia = 1;
-        Horas = 1;
+        Horas = 0;
         PisoAveriado = 0;
         ColumnaAveriada =0;
         Pisos = 1;
         Columnas = 0;
 
-        while(Dia <=3){
+        while(Dia < 4){
             Dia = Dia + 1;
             ProbRayo = Math.random()*(100);
             ProbPisoAveriado = Math.random()*(100);
@@ -25,10 +33,10 @@ public class ExamenEdificio {
             if(ProbPisoAveriado <= 15){
                PisoAveriado = (int)(Math.random()*(7-1)+1); 
             }
-            while(Horas < 25){
+            while(Horas < 24){
                 Horas = Horas + 1;
                 System.out.println("=============================================");
-                System.out.println("Hora: " + Horas);
+                System.out.println("Dia: "+ Dia + " Hora: " + Horas);
                 while(Pisos <=7){
                     System.out.print(8 - Pisos);
                     if(PisoAveriado == Pisos){
@@ -67,65 +75,3 @@ public class ExamenEdificio {
         }
     }
 }
-
-// while(Dia<=3){
-//     Dia = Dia + 1;
-
-//     for(int i=1;i<=5;i=i+1){
-//         ProbRayo = Math.random();
-
-//         if(ProbRayo >= 0.75 && ColumnaAveriada == 0){
-//             ColumnaAveriada = i;
-//         }
-//     }
-//     for(int j=1;j<=7;j=j+1){
-//         ProbPisoAveriado = Math.random();
-
-//         if(ProbPisoAveriado >= 0.85 && PisoAveriado == 0){
-//             PisoAveriado = j;
-//         }
-//     }
-
-//     for(int horas=0;horas<=24;horas=horas+1){
-//         System.out.println();
-//         System.out.println("Día: " + Dia + " Hora: " + horas);
-
-//         for(int filas=7;filas>0;filas=filas-1){
-//             System.out.print(filas);
-
-//             for(int columnas=1;columnas<=5;columnas=columnas+1){
-//                 ProbVentanaAbierta = (int)(Math.random()*(100));
-//                 ProbLuz = (int)(Math.random()*(100));
-//                 if(ProbVentanaAbierta < 0.7){
-//                     VentanaAbierta = 1;
-//                 }
-//                 else{
-//                     VentanaCerrada = 1;
-//                 }
-
-//                 if(ProbLuz > 40){
-//                     LuzEncendida = 1;
-//                 }
-//                 else{
-//                     LuzApagada = 1;
-//                 }
-
-//                 if(filas == PisoAveriado || columnas == ColumnaAveriada){
-//                     System.out.print(" [T] ");
-//                 }
-//                 else if(VentanaAbierta==1){
-//                     if(LuzEncendida==1){
-//                         System.out.print(" [0] ");
-//                     }
-//                     else if(LuzApagada == 1){
-//                         System.out.print(" [.] ");
-//                     }
-//                 }
-//                 else if(VentanaCerrada == 1){
-//                     System.out.print(" [#] " );
-//                 }
-//             }
-//         System.out.println();
-//         }
-//     }
-// }
