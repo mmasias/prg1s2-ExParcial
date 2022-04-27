@@ -1,5 +1,5 @@
+//EXAMEN HECHO DE LA FORMA CORRECTA:
 import java.lang.Math;
-import java.security.Permission;
 public class ExamenParcial1{
     public static void main(String[] args){
 
