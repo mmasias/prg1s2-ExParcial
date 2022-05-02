@@ -4,12 +4,13 @@ class examen{
     public static void main(String[] args) {
 
         int dia, hora, ubicacionAveria;
-        double  probabilidadVentana, probabilidadLuz, probabilidadAveria;
-        boolean ventanaAbierta, luzEncendida;
-
+        int  probabilidadVentana, probabilidadLuz, probabilidadAveria, probabilidadRayo;
+        boolean ventanaAbierta, luzEncendida, caerRayo;
+        String mensaje = " ";
+        ubicacionAveria=0;
+        caerRayo=false;
         dia = 1;
         while(dia <= 3 ) {
-
 
             // //Averia
             // probabilidadAveria = (Math.random()*(100-0))+0;
@@ -23,20 +24,37 @@ class examen{
             // int columnaRayo;
 
             // columnaRayo= (Math.random()*(100-0))+0;
-
+            probabilidadVentana = (int)(Math.random()*100);
+            probabilidadLuz = (int)(Math.random()*100);
+            probabilidadRayo = (int)(Math.random()*100);
 
             for(hora = 1; hora <= 24; hora++){
-                System.out.println("Hora " + hora + " del dia " + dia);
-                for(int i = 7; i>0; i--){
+
+                System.out.println("Hora " + hora + " del dia " + dia + ": "+mensaje);
+
+
+                if(probabilidadVentana <= 70){
+                    ventanaAbierta=true;
+                }
+                if(probabilidadLuz <= 60){
+                    luzEncendida=true;
+                }
+                if(probabilidadRayo <= 70 && !caerRayo){
+                    caerRayo=true;
+                    ubicacionAveria = (int)(Math.random()*5+1);
+                    mensaje = "Cae un rayo";
+                }
+
+               
+                for(int i = 0; i<=7; i++){
                     System.out.print(i);
                     for(int j = 1; j<=5; j++){
-                        probabilidadVentana = (Math.random()*(100-0))+0;
-                        probabilidadLuz = (Math.random()*(100-0))+0;
-                        ventanaAbierta = probabilidadVentana > 70 ? false: true;
-                        luzEncendida = probabilidadLuz > 60 ? false: true;
-                        
-                        if(ventanaAbierta){
-                            if(luzEncendida){
+    
+                        if(caerRayo=true && j==ubicacionAveria){
+                            System.out.print(" [R] ");
+                        } else {
+                        if(ventanaAbierta=true){
+                            if(luzEncendida=true){
                                 System.out.print(" [O] ");
                             }
                             else{
@@ -47,9 +65,11 @@ class examen{
                             System.out.print(" [#] ");
                         }
                     }
-                    System.out.println(); 
+                        
+                    }
+                    System.out.println(""); 
                 }
-    
+                caerRayo=false;
             }
             dia++;
         }
