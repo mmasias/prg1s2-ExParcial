@@ -18,7 +18,7 @@ class examen{
 
                     System.out.println("Dia " + dias+ " Hora " + horas);
                     for(losPisos=1; losPisos<=7 ;losPisos++){
-                        for(departamentos=1;departamentos<=5;departamentos++){
+                        for(departamentos=5;departamentos<=1;departamentos--){
                             if(rayo && departamentos==columnaMuerta){
                                 System.out.println("[R]");
                             }else{
