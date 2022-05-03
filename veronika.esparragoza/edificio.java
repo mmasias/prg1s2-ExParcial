@@ -2,22 +2,21 @@ import java.util.zip.ZipEntry;
 public class edificio{
     public static void main(String[] args){
 
-        boolean caeRayo;
+        boolean averiaRayo;
 		int columnaMuerta;
-		for(int losDias=1; losDias<=3; losDias++) {
-			caeRayo=false;
+		for(int days=1; days<=3; days++) {
+			averiaRayo=false;
 			columnaMuerta=0;
-			for(int lasHoras=0; lasHoras<=23; lasHoras++) {
+			for(int hours=0; hours<=23; hours++) {
 				if (Math.random()<.5 && !caeRayo) {
-					caeRayo=true;
+					averiaRayo=true;
 					columnaMuerta = (int) (Math.random()*5+1);
-					System.out.println("Cae un rayo");
 					}
-				System.out.println("DIA "+losDias + " HORA "+lasHoras);
-				for (int lasPlantas=1; lasPlantas<=7; lasPlantas++){
-					for (int losDomicilios=1; losDomicilios<=5; losDomicilios++) {
-						if (caeRayo && losDomicilios==columnaMuerta) {
-							System.out.print(" [R] ");
+				System.out.println("DIA "+days + " HORA "+hours);
+				for (int pisos=1; pisos<=7; pisos++){
+					for (int flat=1; flat<=5; flat++) {
+						if (averiaRayo && flat==columnaMuerta) {
+							System.out.print(" [T] ");
 						} else {
 							if (Math.random()<=0.7) {
 								if (Math.random()<=0.6) {
