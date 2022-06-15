@@ -3,23 +3,23 @@ import java.util.Scanner;
 
 public class pacman {
 
-    private static int puntos = 0;
+    private static int puntos = 0, poder = 10;
 
     public static void main(String[] args) {
 
         int[][] elMapa = {
-            {2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},				
+            {2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6},				
             {0,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,0},				
             {0,1,4,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,4,1,0},				
             {0,1,0,1,1,0,1,0,1,3,0,0,3,1,0,1,0,0,1,0,1,0},				
             {0,1,0,1,1,0,0,0,3,0,0,0,0,3,0,0,0,1,1,0,1,0},				
             {0,0,0,0,0,0,1,1,3,0,0,0,0,3,1,1,0,0,1,0,0,0},				
             {0,1,0,1,1,0,1,1,3,3,3,3,3,3,1,1,0,1,1,0,1,0},				
-            {0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0},				
+            {0,1,0,1,1,0,0,0,0,0,6,0,0,0,0,0,0,0,1,0,1,0},				
             {0,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,1,0},				
             {0,1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1,0},				
             {0,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,0},				
-            {0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}				
+            {6,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6}				
         };
 
         
@@ -68,7 +68,9 @@ public class pacman {
 				INICIO + WHITE + WHITE_BACKGROUND + "[#]" + RESET,
                 INICIO + BLACK + BLACK_BACKGROUND + "   " + RESET,
 				INICIO + BLUE_BOLD + BLUE_BACKGROUND + "~ ~" + RESET,
-                INICIO + PURPLE + PURPLE_BACKGROUND + "!T!" + RESET
+                INICIO + PURPLE + PURPLE_BACKGROUND + "!T!" + RESET,
+                INICIO + PURPLE + PURPLE_BACKGROUND + "  " + RESET,
+                INICIO + YELLOW_BOLD + BLACK_BACKGROUND + " @ " + RESET
 		};
 		System.out.print(matrizDeElementos[elementoDelMapa]);
 	}
@@ -133,6 +135,7 @@ public class pacman {
         
         registraPuntos(unPersonaje, unMapa);
         teletransporte(unPersonaje, unMapa);
+        poder(unPersonaje, unMapa);
 	}
 
     private static void teletransporte(int[] personaje, int[][] unMapa){
@@ -170,6 +173,16 @@ public class pacman {
         personaje[0] = elPersonajeX;
 		personaje[1] = elPersonajeY;
 	}
+
+    private static void poder(int[] personaje, int[][] unMapa){
+        if(unMapa[personaje[1]][personaje[0]] == 6){
+            System.out.println("Se te acaba de brindar tu poder en 10 turnos");
+            unMapa[personaje[1]][personaje[0]] = 2;
+            for (int i = 0; i < poder; i--) {
+                System.out.println("Se te acabo tu poder");
+            }
+        }
+    }
 
     private static void registraPuntos(int[] personaje, int[][] unMapa){
         if(unMapa[personaje[1]][personaje[0]] == 0){
